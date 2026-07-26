@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color: #1f1f1f;
+    background: #f7f7f5;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: #f7f7f5;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #2f6f5f;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-card;
+  }
+
+  .button-primary {
+    @apply min-h-12 w-full rounded-[14px] bg-brand px-5 text-base font-medium text-white transition hover:bg-[#285f52] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .button-secondary {
+    @apply min-h-12 w-full rounded-[14px] border border-line bg-white px-5 text-base font-medium text-ink transition hover:bg-canvas disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .button-danger {
+    @apply min-h-12 w-full rounded-[14px] bg-danger px-5 text-base font-medium text-white transition disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .field {
+    @apply min-h-12 w-full rounded-xl border border-line bg-white px-4 text-base text-ink outline-none transition placeholder:text-subtle focus:border-brand focus:ring-2 focus:ring-brand-soft;
+  }
+
+  .field-label {
+    @apply mb-2 block text-sm font-medium text-ink;
+  }
+}
