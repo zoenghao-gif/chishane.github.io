@@ -1,27 +1,24 @@
 # 今天吃什么
 
-移动端优先的外卖店铺随机抽选工具。历史记录保存在本地 Node.js 后端管理的 SQLite 文件，不使用 `localStorage` 保存业务数据。
+移动端优先的随机选店工具。数据保存在当前浏览器本地，不需要后端、数据库或登录服务。
 
-## 本地启动
+## 本地运行
 
-1. 安装 Node.js 22.5 或更高版本。
-2. 执行 `pnpm install`。
-3. 执行 `pnpm dev`。
-
-前端地址为 `http://127.0.0.1:5173`，本地后端地址为 `http://127.0.0.1:8787`。首次运行会自动创建 `data/what-to-eat.sqlite`。
-
-## 检查
-
-```text
-pnpm test
-pnpm build
-pnpm test:e2e
+```bash
+pnpm install
+pnpm dev
 ```
 
-## 本地生产预览
+打开 `http://127.0.0.1:5173`。
 
-- 执行 `pnpm build`。
-- 执行 `pnpm start`。
-- 浏览器打开 `http://127.0.0.1:8787`。
+## 构建
 
-数据库文件位于 `data/what-to-eat.sqlite`。删除该文件会清空本地数据。
+```bash
+pnpm build
+```
+
+构建结果在 `dist/`，可部署到 GitHub Pages 等静态托管平台。
+
+## 数据说明
+
+记录和设置保存在浏览器 `localStorage` 中。换浏览器、换设备或清除浏览器数据后，原记录无法恢复。项目不上传或收集用户记录。
